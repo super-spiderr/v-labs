@@ -1,0 +1,62 @@
+[
+  {
+    "role": "Founder & Principal Architect",
+    "company": "V-Labs",
+    "period": "2024 - PRESENT",
+    "location": "Remote / Dev Studio",
+    "description": [
+      "Launched a specialized development studio building high-performance SaaS products, IoT telemetry web panels, and custom AI agents.",
+      "Architected and delivered Zyox (catering logistics and interactive chef planners) and iSportzz (gamified community social network matching tournament brackets).",
+      "Integrated vector search databases and customized LLM prompts for automated document parsing and agentic customer support workflows."
+    ],
+    "skills": ["Next.js", "Node.js", "Fastify", "AI Agents", "PostgreSQL", "MongoDB", "Prisma"],
+    "color": "#2dd4bf",
+    "glow": "rgba(45, 212, 191, 0.35)",
+    "logoKey": "founder"
+  },
+  {
+    "role": "Lead IoT Telemetry Architect",
+    "company": "TI Clean Mobility (Montra EV Partner)",
+    "period": "2022 - 2024",
+    "location": "Chennai, India",
+    "description": [
+      "Directed development of the Montra Connect smart rickshaw telemetry dashboard, connecting fleet managers with real-time operations data.",
+      "Implemented low-latency WebSockets streams handling telemetry updates from 1,000+ active EV vehicles.",
+      "Built cross-platform mobile fleet monitoring app using React Native, maps integration, and smooth vector graphics."
+    ],
+    "skills": ["React Native", "WebSockets", "IoT Integration", "GSAP", "Redis", "Node.js"],
+    "color": "#10b981",
+    "glow": "rgba(16, 185, 129, 0.35)",
+    "logoKey": "iot"
+  },
+  {
+    "role": "Senior Full-Stack Engineer",
+    "company": "iSportzz Dev Studio",
+    "period": "2020 - 2022",
+    "location": "Remote / Chennai",
+    "description": [
+      "Engineered the core backend infrastructure for the iSportzz sports community social media network platform.",
+      "Designed scalable GraphQL APIs serving dynamic match matching, user profile networks, and selfie verification systems.",
+      "Reduced database lookup query times by 40% using Redis query caching and index optimization."
+    ],
+    "skills": ["GraphQL", "Next.js", "Redis", "Tailwind CSS", "MongoDB", "Fastify"],
+    "color": "#3b82f6",
+    "glow": "rgba(59, 130, 246, 0.35)",
+    "logoKey": "fullstack"
+  },
+  {
+    "role": "Software Engineer Intern",
+    "company": "Pixel Craft Technologies",
+    "period": "2019 - 2020",
+    "location": "Coimbatore, India",
+    "description": [
+      "Developed clean, responsive landing pages and interactive client dashboards using React, CSS variables, and HTML5.",
+      "Integrated RESTful APIs and set up multi-factor OAuth security portals.",
+      "Collaborated with UI/UX designers to translate Figma visual interfaces into pixel-perfect modular React components."
+    ],
+    "skills": ["React", "JavaScript", "REST APIs", "CSS3", "OAuth"],
+    "color": "#a855f7",
+    "glow": "rgba(168, 85, 247, 0.35)",
+    "logoKey": "intern"
+  }
+]

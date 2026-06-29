@@ -1,0 +1,25 @@
+{
+  "tagline": "Let's collaborate on premium interactive web interfaces and high-performance designs.",
+  "heading": "Let's build something exceptional.",
+  "description": "If you have a project idea, a position open, or just want to chat about web technology, feel free to drop a message. I am always open to discussing new opportunities and challenges.",
+  "links": [
+    {
+      "label": "Email",
+      "value": "hello@vignesh.dev",
+      "href": "mailto:hello@vignesh.dev",
+      "iconKey": "email"
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/vignesh",
+      "href": "https://github.com",
+      "iconKey": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/vignesh",
+      "href": "https://linkedin.com",
+      "iconKey": "linkedin"
+    }
+  ]
+}
