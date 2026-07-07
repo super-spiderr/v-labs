@@ -133,7 +133,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 animate-fade-in">
           <div>
             <span className="text-teal-400 font-mono text-xs uppercase tracking-widest">
-              03 / Connection
+              04 / Connection
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mt-2">
               Get In Touch

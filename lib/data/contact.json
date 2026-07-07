@@ -6,19 +6,19 @@
     {
       "label": "Email",
       "value": "hello@vignesh.dev",
-      "href": "mailto:hello@vignesh.dev",
+      "href": "mailto:vigneshbalasubramaniyan1409@gmeail.com",
       "iconKey": "email"
     },
     {
       "label": "GitHub",
-      "value": "github.com/vignesh",
-      "href": "https://github.com",
+      "value": "github.com/super-spiderr",
+      "href": "https://github.com/super-spiderr",
       "iconKey": "github"
     },
     {
       "label": "LinkedIn",
       "value": "linkedin.com/in/vignesh",
-      "href": "https://linkedin.com",
+      "href": "https://www.linkedin.com/in/vignesh-balasubramaniyan-525b70194/",
       "iconKey": "linkedin"
     }
   ]

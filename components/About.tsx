@@ -303,7 +303,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 animate-fade-in">
           <div>
             <span className="text-teal-400 font-mono text-xs uppercase tracking-widest">
-              02 / About Me
+              01 / About Me
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mt-2">
               Biography
@@ -317,12 +317,12 @@ export default function About() {
         {/* Reorganized Biography Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Text bio & Stats Grid */}
-          <div className="lg:col-span-6 flex flex-col gap-6 text-muted-foreground text-base md:text-lg font-sans leading-relaxed animate-fade-in">
+          <div className="lg:col-span-6 flex flex-col gap-6 text-muted-foreground text-base md:text-md font-sans leading-relaxed animate-fade-in">
             {aboutData.biographyParagraphs.map((paragraph, pIdx) => {
               if (paragraph.includes("Vignesh")) {
                 const parts = paragraph.split("Vignesh");
                 return (
-                  <p key={pIdx + 1}>
+                  <p key={pIdx}>
                     {parts[0]}
                     <span className="text-white font-medium">Vignesh</span>
                     {parts[1]}

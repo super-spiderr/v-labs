@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  SparklesIcon,
   Menu01Icon,
   Cancel01Icon,
 } from "@hugeicons/core-free-icons";
@@ -34,12 +33,12 @@ export default function Navbar() {
     if (targetElement) {
       const offset = 80;
       gsap.to(globalThis, {
-        duration: 1.5,
+        duration: 1.0,
         scrollTo: {
           y: targetElement,
           offsetY: offset,
         },
-        ease: "power3.inOut",
+        ease: "power2.out",
       });
       globalThis.history.pushState(null, "", href);
       setIsOpen(false);
@@ -124,9 +123,9 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "Projects", href: "#projects" },
-    { label: "Journey", href: "#journey" },
     { label: "About", href: "#about" },
+    { label: "Journey", href: "#journey" },
+    { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -146,8 +145,8 @@ export default function Navbar() {
           onClick={(e) => handleScrollTo(e, "#home")}
           className="flex items-center gap-2 group cursor-pointer focus:outline-none"
         >
-          <div className="flex items-center justify-center p-2 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
-            <HugeiconsIcon icon={SparklesIcon} className="size-5" />
+          <div className="flex items-center justify-center size-9 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300 font-sans font-extrabold text-base">
+            V
           </div>
           <span className="font-sans font-bold text-xl tracking-tight bg-gradient-to-r from-foreground to-foreground/75 bg-clip-text text-transparent group-hover:text-primary transition-all duration-300">
             Vignesh

@@ -204,13 +204,12 @@ export default function ProjectsCatalog() {
           {/* Right Column: Case Study Pane */}
           <div ref={detailsRef} className="showcase-panel flex flex-col gap-8">
             {/* Screenshot Frame */}
-            <div
+            {/* <div
               className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/2 backdrop-blur-md transition-all duration-500 group shadow-2xl"
               style={{
                 boxShadow: `0 30px 60px -15px ${activeProj.catalogGlow}`,
               }}
             >
-              {/* Browser Bar */}
               <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/5 bg-white/[0.03]">
                 <div className="flex items-center gap-1.5">
                   <span className="size-3 rounded-full bg-rose-500/40" />
@@ -221,20 +220,12 @@ export default function ProjectsCatalog() {
                   vignesh.dev/projects/
                   {activeProj.title.toLowerCase().replace(/\s+/g, "-")}
                 </div>
-                <div className="w-12" /> {/* spacer for center alignment */}
+                <div className="w-12" />
               </div>
 
-              {/* Screenshot Media */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#07070a]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={activeProj.screenshotImage}
-                  alt={`${activeProj.title} Screenshot`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
-                  loading="lazy"
-                />
               </div>
-            </div>
+            </div> */}
 
             {/* Title & Description Details */}
             <div className="flex flex-col gap-4">
@@ -344,13 +335,12 @@ export default function ProjectsCatalog() {
               </div>
 
               {/* Mock browser preview and screenshot */}
-              <div
+              {/* <div
                 className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/2 backdrop-blur-md shadow-xl"
                 style={{
                   boxShadow: `0 15px 30px -10px ${proj.catalogGlow}`,
                 }}
               >
-                {/* Browser bar */}
                 <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-white/[0.03]">
                   <div className="flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-rose-500/40" />
@@ -362,17 +352,9 @@ export default function ProjectsCatalog() {
                   </div>
                   <div className="w-8" />
                 </div>
-                {/* Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#07070a]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={proj.screenshotImage}
-                    alt={`${proj.title} Screenshot`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
                 </div>
-              </div>
+              </div> */}
 
               {/* Description */}
               <p className="text-muted-foreground text-sm font-sans leading-relaxed">

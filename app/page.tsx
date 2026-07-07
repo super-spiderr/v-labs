@@ -23,7 +23,7 @@ interface Project {
   catalogGlow: string;
 }
 
-const projects = projectsData.slice(0, 3) as Project[];
+const projects = projectsData.slice(0, 4) as Project[];
 
 interface ProjectCardProps {
   proj: Project;
@@ -97,7 +97,7 @@ function ProjectCardInner({
       <div className="absolute inset-0 bg-[linear-gradient(rgba(20,184,166,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(20,184,166,0.02)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_at_center,black_75%,transparent_100%)] pointer-events-none" />
 
       {/* Card Content (Specs) */}
-      <div className="w-full md:w-[60%] flex flex-col justify-between h-full z-10 mt-4 md:mt-0">
+      <div className="w-full flex flex-col justify-between h-full z-10 mt-4 md:mt-0">
         <div>
           <div className="flex items-center justify-between">
             <span className="text-teal-400 font-mono text-[9px] md:text-[10px] font-semibold tracking-wider uppercase">
@@ -169,30 +169,6 @@ function ProjectCardInner({
           </div>
         </div>
       </div>
-
-      {/* Circular Viewport (Mascot Chamber with 3D Pop-out) */}
-      <div className="w-full md:w-[35%] flex items-center justify-center z-10">
-        <div className={circularViewportClassName}>
-          {/* Mascot container that floats (overflow-visible to break out) */}
-          <div className="animate-mascot-float flex items-center justify-center w-full h-full relative overflow-visible">
-            {/* Portal glow aura */}
-            <div
-              className={`absolute w-20 h-20 rounded-full blur-2xl opacity-40 bg-gradient-to-r ${proj.landingColor}`}
-              style={{
-                boxShadow: `0 0 40px ${proj.landingGlow}`,
-              }}
-            />
-            {/* Mascot Image (Pops out / Breaks out of top boundary) */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              key={activeProject} // Force recreate to trigger materialize animation
-              src={proj.mascotImage}
-              alt={`${proj.title} mascot`}
-              className="absolute bottom-[-10px] lg:bottom-[-15px] w-[155px] h-[155px] lg:w-[225px] lg:h-[225px] max-w-none object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.7)] animate-holo-in select-none pointer-events-none"
-            />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -208,7 +184,7 @@ function ProjectCard({
   handleMouseMove,
   handleMouseLeave,
 }: ProjectCardProps) {
-  const diff = (idx - activeProject + 3) % 3;
+  const diff = (idx - activeProject + 4) % 4;
   const isCenter = diff === 0;
 
   // Calculate 3D perspective translations
@@ -216,12 +192,18 @@ function ProjectCard({
 
   let transformStyle = "translate3d(0px, 0px, 0px) rotateY(0deg)";
   if (!isCenter) {
-    const direction = diff === 1 ? 1 : -1;
-    transformStyle = `translate3d(${direction * tx}px, 0px, -200px) rotateY(${-direction * 20}deg)`;
+    if (diff === 2) {
+      transformStyle = "translate3d(0px, 0px, -400px) rotateY(0deg)";
+    } else {
+      const direction = diff === 1 ? 1 : -1;
+      transformStyle = `translate3d(${direction * tx}px, 0px, -200px) rotateY(${-direction * 20}deg)`;
+    }
   }
 
   const opacityClass = isCenter
     ? "opacity-100 scale-100 shadow-[0_25px_60px_rgba(0,0,0,0.75)]"
+    : diff === 2
+    ? "opacity-0 pointer-events-none scale-[0.6] blur-[2px]"
     : "opacity-35 scale-[0.78] blur-[1px] hover:opacity-50 hover:scale-[0.8]";
 
   const zIndexClass = isCenter ? "z-30" : "z-10";
@@ -307,7 +289,7 @@ export default function Home() {
   useEffect(() => {
     if (isHovered) return;
     const timer = setInterval(() => {
-      setActiveProject((prev) => (prev + 1) % 3);
+      setActiveProject((prev) => (prev + 1) % projects.length);
     }, 5500); // 5.5s autoplay interval
     return () => clearInterval(timer);
   }, [activeProject, isHovered]);
@@ -495,7 +477,13 @@ export default function Home() {
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Space-themed Interactive Projects Section (Fits screen viewport) */}
+      {/* 2. About Section */}
+      <About />
+
+      {/* 3. Journey Section */}
+      <Journey />
+
+      {/* 4. Space-themed Interactive Projects Section (Fits screen viewport) */}
       <section
         ref={containerRef}
         id="projects"
@@ -543,7 +531,7 @@ export default function Home() {
           {/* Header */}
           <div className="text-center mb-6 lg:mb-8 border-b border-white/10 pb-3">
             <span className="text-teal-400 font-mono text-[10px] lg:text-xs uppercase tracking-widest">
-              01 / Selected Missions
+              03 / Selected Missions
             </span>
             <h2 className="text-3xl lg:text-4xl md:text-5xl font-black text-white uppercase tracking-tight mt-0.5">
               Projects
@@ -583,7 +571,7 @@ export default function Home() {
             <div className="flex items-center gap-6">
               {/* Prev Arrow */}
               <button
-                onClick={() => setActiveProject((activeProject - 1 + 3) % 3)}
+                onClick={() => setActiveProject((activeProject - 1 + projects.length) % projects.length)}
                 className="group border border-white/10 hover:border-teal-500/40 hover:bg-teal-500/5 text-muted-foreground hover:text-white transition-all rounded-full p-2.5 cursor-pointer"
                 aria-label="Previous Project"
               >
@@ -618,7 +606,7 @@ export default function Home() {
 
               {/* Next Arrow */}
               <button
-                onClick={() => setActiveProject((activeProject + 1) % 3)}
+                onClick={() => setActiveProject((activeProject + 1) % projects.length)}
                 className="group border border-white/10 hover:border-teal-500/40 hover:bg-teal-500/5 text-muted-foreground hover:text-white transition-all rounded-full p-2.5 cursor-pointer"
                 aria-label="Next Project"
               >
@@ -663,13 +651,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Journey Section */}
-      <Journey />
-
-      {/* 4. About Section */}
-      <About />
-
-      {/* 4. Contact Section */}
+      {/* 5. Contact Section */}
       <Contact />
     </main>
   );
