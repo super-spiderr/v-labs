@@ -175,7 +175,7 @@ export default function Hero() {
   useGSAP(
     () => {
       const isMobile = window.innerWidth < 768;
-      const initialLandingY = isMobile ? -150 : -220;
+      const initialLandingY = isMobile ? -130 : -190;
 
       const textElements = textContainerRef.current
         ? textContainerRef.current.querySelectorAll("h3, p, .decorative-badge")
@@ -399,7 +399,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#030303] flex items-center justify-center select-none"
+      className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#030303] flex items-center justify-center pt-20 md:pt-28 select-none"
     >
       {/* Background Neon Gradients */}
       <div className="absolute top-[20%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] rounded-full bg-teal-500/10 blur-[150px] pointer-events-none" />
@@ -409,7 +409,7 @@ export default function Hero() {
       {/* Floating Mascot Character (Absolute inside Hero container) */}
       <div
         ref={mascotRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-44 h-44 md:w-60 md:h-60 pointer-events-none"
+        className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-44 h-44 md:w-60 md:h-60 pointer-events-none"
       >
         <div ref={mascotParallaxRef} className="w-full h-full">
           <div ref={mascotInnerRef} className="relative w-full h-full">
@@ -667,18 +667,18 @@ export default function Hero() {
 
         {/* Animated Subtitle */}
         <p className="mt-6 text-sm md:text-lg tracking-[0.25em] md:tracking-[0.4em] text-muted-foreground uppercase select-text font-medium bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-          Design / Development / Interactive
+          Full Stack / React Native / Node.js
         </p>
 
         {/* One-line Self Intro Paragraph */}
         <p className="mt-6 text-sm md:text-base text-muted-foreground/80 font-sans max-w-2xl mx-auto select-text font-normal leading-relaxed">
-          A creative full stack developer focused on building premium,
-          interactive user interfaces and high-performance web applications.
+          Full-stack engineer with a mobile-first background and 6+ years of experience.
+          Shipping end-to-end features across EV telemetry, sports tech, retail, and SaaS architectures.
         </p>
 
         {/* Dynamic decorative badge */}
         <div className="decorative-badge mt-8 px-4 py-1.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-[10px] md:text-xs tracking-wider text-teal-400 font-mono uppercase">
-          ✦ Interactive Portfolio ✦
+          ✦ Shipped Across EV & Sports Tech ✦
         </div>
       </div>
 
